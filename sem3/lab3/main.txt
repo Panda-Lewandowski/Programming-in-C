@@ -1,0 +1,53 @@
+/*
+1) Чтение строки из текстового файла. Строка должна читаться целиком (т.е. до символа EOL или EOF) за один проход. Реализация с помощью выделения большого буфера и чтения за один раз не принимается.
+2) Замена в строке указанной непустой подстроки произвольной длины на другую подстроку произвольной длины (возможно пустую).
+
+С помощью реализованных функций обработать текстовый файл, в котором выполнить замену всех вхождений указанной подстроки на заданную. Преобразованные строки записать в новый файл.
+
+Пример.
+В строке "aaaa" заменяем подстроку "aa" на "bbb". После замены получаем "bbbbbb".
+
+Все параметры передаются как аргументы командной строки.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "func.h"
+
+int main(int argc, char** argv)
+{
+	FILE* source;
+    FILE* g;
+	char* string;
+	char* stringNew;
+	
+	
+	source = fopen(argv[1],"r");
+    g = fopen("_output","w");
+	
+	printf("Original file:\n");
+    string = get_line(source);
+	while (string)
+	{
+		puts(string);
+		free(string);
+        string = get_line(source);
+	}
+	free(string);
+	
+	rewind(source);
+	
+    string = get_line(source);
+	while (string)
+	{
+        stringNew = replace_line(string,argv[2],argv[3]);
+        fprintf(g,"%s\n",stringNew);
+		free(string);
+		free(stringNew);
+        string = get_line(source);
+	}
+	free(string);
+	puts("Sucess!");
+	return 0;
+}
