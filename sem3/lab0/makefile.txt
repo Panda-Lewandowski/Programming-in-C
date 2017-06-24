@@ -1,0 +1,25 @@
+# compiler
+CC := gcc
+LD := gcc
+
+# argc
+CFLAGS :=-c -Wall -Werror -std=c99 -pedantic
+SRCS := main.c func.c
+OBJS := main.o func.o
+OUT := lab1.exe
+
+ifeq ($(mode), debug)
+	CFLAGS += -g3
+endif
+
+ifeq ($(mode), release)
+	CFLAGS += -DNDEBUG -g0
+endif
+
+
+all:
+	$(CC) $(CFLAGS) -c $(SRCS)
+	$(LD) $(OBJS) -o $(OUT)
+
+clean:
+	del *.o *.exe

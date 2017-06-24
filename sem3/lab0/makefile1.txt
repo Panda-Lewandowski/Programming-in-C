@@ -1,0 +1,20 @@
+# Компилятор
+CC := gcc
+
+# Опции компиляции
+CFLAGS := -std=c99 -Wall -Werror -pedantic
+
+# Общие  файлы
+OBJS := main.c func.c
+
+main.o : main.c func.h
+	$(CC) $(CFLAGS) -c main.c
+
+func.o : func.c func.h
+	$(CC) $(CFLAGS) -c func.c
+
+lab1.exe :
+	$(CC) -o lab1.exe main.o func.o
+
+clean :
+	rm *.o *.exe
