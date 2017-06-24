@@ -1,5 +1,5 @@
 # Programming in C
-    2nd course, 4th semester
+    1st - 2nd course, 2nd - 3d semester
 
     Bauman Moscow State Technical University
     
