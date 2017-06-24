@@ -1,0 +1,5 @@
+furfur 30
+purpur 145
+vogue 45
+interviewer 100
+geo 89

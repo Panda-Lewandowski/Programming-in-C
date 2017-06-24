@@ -1,0 +1,7 @@
+
+ furfur: 30  
+ young: 741  
+ purpur: 145  
+ vogue: 45  
+ interviewer: 100  
+ geo: 89  
