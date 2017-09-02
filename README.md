@@ -25,6 +25,8 @@
 | Lab 7| ✅ |<a href="../../blob/master/sem3/lab7/README.md">Task</a>|
 | Flavius| ✅ |<a href="../../blob/master/sem3/flavius/README.md">Task</a>|
 
+#### See CodeStyle on <a href="https://github.com/Panda-Lewandowski/Programming-in-C/wiki/Code-Style">wiki</a>
+
 #### <i>Legend:</i>
 <ul>
 <li>✅ - ОК
